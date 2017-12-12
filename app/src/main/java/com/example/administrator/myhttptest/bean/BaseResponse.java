@@ -1,4 +1,4 @@
-package com.example.administrator.myhttptest.mvp.home.bean;
+package com.example.administrator.myhttptest.bean;
 
 /**
  * Created by lijie on 2017/8/11.

@@ -1,6 +1,6 @@
 package com.example.administrator.myhttptest.net;
 
-import com.example.administrator.myhttptest.MyApp;
+import com.example.administrator.myhttptest.base.MyApp;
 import com.example.administrator.myhttptest.constant.ApiConstant;
 import com.example.administrator.myhttptest.constant.AppConstant;
 import com.example.administrator.myhttptest.utils.LogUtils;
@@ -33,13 +33,14 @@ public class IdeaApi {
     private IdeaApi(){
         File cacheFile=new File(MyApp.getInstance().getApplicationContext().getCacheDir(),"cache");
         Cache cache=new Cache(cacheFile,1024*1024*100);//100Mb
+
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         Interceptors interceptors=new Interceptors();
         ArrayList<Interceptor> interceptorsArr = interceptors.getInterceptors();
         for(Interceptor inter:interceptorsArr){
             builder.addInterceptor(inter);
         }
-        OkHttpClient okHttpClient=builder.readTimeout(AppConstant.DEFAULT_TIMEOUT, TimeUnit.MILLISECONDS)
+        OkHttpClient okHttpClient= builder.readTimeout(AppConstant.DEFAULT_TIMEOUT, TimeUnit.MILLISECONDS)
                       .connectTimeout(AppConstant.DEFAULT_TIMEOUT, TimeUnit.MILLISECONDS)
                       .addNetworkInterceptor(new HttpCacheInterceptor())
                       .cache(cache)

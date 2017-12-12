@@ -1,19 +1,18 @@
-package com.example.administrator.myhttptest.handler;
+package com.example.administrator.myhttptest.handler.progresshandler;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 
-import com.example.administrator.myhttptest.base.inters.ProgressHandlerIml;
+import com.example.administrator.myhttptest.widget.MyProgressDialog;
 
 
 /**
  * Created by lijie on 2017/8/14.
  */
 
-public class ProgressHandler implements ProgressHandlerIml {
+public class ProgressHandlerImp implements ProgressHandler {
     private Context context;
-    private ProgressDialog progressDialog;
-    public ProgressHandler(Context context) {
+    private MyProgressDialog progressDialog;
+    public ProgressHandlerImp(Context context) {
         this.context = context;
     }
 
@@ -21,7 +20,7 @@ public class ProgressHandler implements ProgressHandlerIml {
     public void loadingStart() {
         if(progressDialog==null){
             try {
-                progressDialog=new ProgressDialog(context);
+                progressDialog=new MyProgressDialog(context);
                 progressDialog.setCanceledOnTouchOutside(false);
                 progressDialog.setCancelable(true);
                 progressDialog.show();

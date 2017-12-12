@@ -1,4 +1,4 @@
-package com.example.administrator.myhttptest.mvp.detail;
+package com.example.administrator.myhttptest.amvp.detail;
 
 import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
@@ -11,7 +11,7 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.example.administrator.myhttptest.R;
 import com.example.administrator.myhttptest.base.BaseActivity;
 import com.example.administrator.myhttptest.databinding.ActivityImageDetailBinding;
-import com.example.administrator.myhttptest.mvp.home.bean.MeiZhiItemData;
+import com.example.administrator.myhttptest.bean.MeiZhiItemData;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 

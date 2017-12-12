@@ -57,14 +57,15 @@ public class Interceptors {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
             @Override
             public void log(String message) {
-                if (TextUtils.isEmpty(message)) return;
+                if (TextUtils.isEmpty(message))
+                    return;
                 //如果收到想响应是json才打印
                 if (message.startsWith("{") || message.startsWith("[")) {
                     Log.e("收到响应:",message);
                 }
             }
         });
-        interceptor.setLevel(HttpLoggingInterceptor.Level.HEADERS);
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         mInterceptors.add(interceptor);
     }
 

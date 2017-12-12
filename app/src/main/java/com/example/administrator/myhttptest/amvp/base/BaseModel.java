@@ -1,4 +1,4 @@
-package com.example.administrator.myhttptest.mvp.base;
+package com.example.administrator.myhttptest.amvp.base;
 
 import android.content.Context;
 

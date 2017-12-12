@@ -1,6 +1,6 @@
 package com.example.administrator.myhttptest.net;
 
-import com.example.administrator.myhttptest.mvp.home.bean.MeiZhi;
+import com.example.administrator.myhttptest.bean.MeiZhi;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;

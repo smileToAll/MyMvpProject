@@ -1,45 +1,35 @@
-package com.example.administrator.myhttptest.mvp.home;
+package com.example.administrator.myhttptest.amvp.home;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.example.administrator.myhttptest.R;
+import com.example.administrator.myhttptest.amvp.detail.ImageDetailActivity;
 import com.example.administrator.myhttptest.base.BaseActivity;
+import com.example.administrator.myhttptest.bean.MeiZhi;
+import com.example.administrator.myhttptest.bean.MeiZhiItemData;
 import com.example.administrator.myhttptest.databinding.ActivityMainBinding;
-import com.example.administrator.myhttptest.mvp.detail.ImageDetailActivity;
-import com.example.administrator.myhttptest.mvp.home.bean.BaseResponse;
-import com.example.administrator.myhttptest.mvp.home.bean.MeiZhi;
-import com.example.administrator.myhttptest.mvp.home.bean.MeiZhiItemData;
 import com.example.administrator.myhttptest.quickadapter.BaseQuickAdapter;
 import com.example.administrator.myhttptest.quickadapter.BaseViewHolder;
 import com.example.administrator.myhttptest.viewmodel.MainItemVIewModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeActivity extends BaseActivity implements HomeContract.View {
     ActivityMainBinding binding;
     BaseQuickAdapter<MeiZhiItemData> adapter;
     HomeContract.Presenter presenter;
-    @Override
-    public void setData(MeiZhi meiZhi) {
-        adapter.addData(meiZhi.getResults());
-        adapter.notifyDataSetChanged();
-    }
+    List<MeiZhiItemData> totalList=new ArrayList<>();
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
-    }
+
 
     @Override
     public void initView() {
         super.initView();
-        presenter=new HomePresenter(this,this);
-        presenter.getData(1);
         RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(this);
         binding.recycler.setLayoutManager(layoutManager);
         adapter=new BaseQuickAdapter<MeiZhiItemData>(R.layout.item_main_recycler) {
@@ -60,28 +50,32 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
     }
 
     @Override
+    public void initData() {
+        super.initData();
+        presenter=new HomePresenter(this,this);
+        presenter.getData(1);
+    }
+
+    @Override
     public void setDataBinding() {
         super.setDataBinding();
         binding= DataBindingUtil.setContentView(this, R.layout.activity_main);
     }
 
     @Override
-    public void showProgress() {
-        progressHandler.loadingStart();
+    public void setListData(MeiZhi meiZhi) {
+        totalList.addAll(meiZhi.getResults());
+        adapter.setNewData(totalList);
+        adapter.notifyDataSetChanged();
     }
 
     @Override
-    public void hideProgress() {
-        progressHandler.loadingComplete();
+    public void showProgressDialog() {
+        progressHandlerImp.loadingStart();
     }
 
     @Override
-    public void onHttpError(BaseResponse response) {
-        httpErrorHandler.onHttpError(response);
-    }
-
-    @Override
-    public void onHttpException(Throwable e) {
-        httpErrorHandler.onHttpException(e);
+    public void dismissProgressDialog() {
+        progressHandlerImp.loadingComplete();
     }
 }

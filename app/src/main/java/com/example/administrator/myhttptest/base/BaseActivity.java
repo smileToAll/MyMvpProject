@@ -3,8 +3,7 @@ package com.example.administrator.myhttptest.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.example.administrator.myhttptest.handler.HttpErrorHandler;
-import com.example.administrator.myhttptest.handler.ProgressHandler;
+import com.example.administrator.myhttptest.handler.progresshandler.ProgressHandlerImp;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 /**
@@ -12,21 +11,31 @@ import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
  */
 
 public abstract class BaseActivity extends RxAppCompatActivity {
-    public HttpErrorHandler httpErrorHandler;
-    public ProgressHandler progressHandler;
 
+    protected ProgressHandlerImp progressHandlerImp;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setDataBinding();
-        progressHandler=new ProgressHandler(this);
-        httpErrorHandler=new HttpErrorHandler(this);
+        progressHandlerImp=new ProgressHandlerImp(this);
+        initData();
         initView();
     }
+
+    public void initData() {
+
+    }
+
     public void setDataBinding(){
 
     }
     public void initView(){
 
+    }
+    protected synchronized void dismissDialog() {
+        progressHandlerImp.loadingComplete();
+    }
+    protected synchronized void showDialog() {
+        progressHandlerImp.loadingStart();
     }
 }

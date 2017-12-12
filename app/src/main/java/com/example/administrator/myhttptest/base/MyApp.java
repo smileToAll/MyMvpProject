@@ -1,9 +1,7 @@
-package com.example.administrator.myhttptest;
+package com.example.administrator.myhttptest.base;
 
 import android.app.Application;
 import android.databinding.DataBindingUtil;
-
-import com.example.administrator.myhttptest.base.AppCompat;
 
 /**
  * Created by lijie on 2017/8/11.

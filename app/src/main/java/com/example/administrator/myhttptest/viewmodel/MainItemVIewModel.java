@@ -4,7 +4,7 @@ import android.content.Context;
 import android.databinding.Bindable;
 
 import com.example.administrator.myhttptest.BR;
-import com.example.administrator.myhttptest.mvp.home.bean.MeiZhiItemData;
+import com.example.administrator.myhttptest.bean.MeiZhiItemData;
 
 /**
  * Created by lijie on 2017/8/15.

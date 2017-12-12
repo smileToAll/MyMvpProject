@@ -1,9 +1,8 @@
-package com.example.administrator.myhttptest.handler;
+package com.example.administrator.myhttptest.handler.httperrorhandler;
 
 import android.content.Context;
 
-import com.example.administrator.myhttptest.base.inters.HttpErrorHandlerIml;
-import com.example.administrator.myhttptest.mvp.home.bean.BaseResponse;
+import com.example.administrator.myhttptest.bean.BaseResponse;
 import com.example.administrator.myhttptest.utils.NetworkUtils;
 import com.example.administrator.myhttptest.utils.ToastUtils;
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
@@ -14,10 +13,10 @@ import java.io.IOException;
  * Created by lijie on 2017/8/14.
  */
 
-public class HttpErrorHandler implements HttpErrorHandlerIml {
+public class HttpErrorHandlerImp implements HttpErrorHandler {
     private Context context;
 
-    public HttpErrorHandler(Context context) {
+    public HttpErrorHandlerImp(Context context) {
         this.context = context;
     }
 

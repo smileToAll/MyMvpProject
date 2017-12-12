@@ -1,4 +1,4 @@
-package com.example.administrator.myhttptest.mvp.home.bean;
+package com.example.administrator.myhttptest.bean;
 
 import java.util.List;
 

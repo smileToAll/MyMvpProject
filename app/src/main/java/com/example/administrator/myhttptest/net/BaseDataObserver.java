@@ -1,8 +1,10 @@
 package com.example.administrator.myhttptest.net;
 
-import com.example.administrator.myhttptest.mvp.home.bean.BaseResponse;
-import com.example.administrator.myhttptest.base.inters.HttpErrorHandlerIml;
-import com.example.administrator.myhttptest.base.inters.ProgressHandlerIml;
+import android.util.Log;
+
+import com.example.administrator.myhttptest.bean.BaseResponse;
+import com.example.administrator.myhttptest.handler.httperrorhandler.HttpErrorHandler;
+import com.example.administrator.myhttptest.handler.progresshandler.ProgressHandler;
 
 import io.reactivex.observers.DefaultObserver;
 
@@ -13,28 +15,31 @@ import io.reactivex.observers.DefaultObserver;
 
 public abstract class BaseDataObserver<T extends BaseResponse> extends DefaultObserver<T> {
 
-    ProgressHandlerIml progressHandlerIml;
-    HttpErrorHandlerIml httpErrorHandlerIml;
+    ProgressHandler progressHandler;
+    HttpErrorHandler httpErrorHandler;
 
 
     public BaseDataObserver() {
     }
 
-    public BaseDataObserver(HttpErrorHandlerIml httpErrorHandlerIml) {
-        this.httpErrorHandlerIml = httpErrorHandlerIml;
+    public BaseDataObserver(HttpErrorHandler httpErrorHandler) {
+        this.httpErrorHandler = httpErrorHandler;
     }
 
-    public BaseDataObserver(ProgressHandlerIml progressHandlerIml, HttpErrorHandlerIml httpErrorHandlerIml) {
-        this.progressHandlerIml = progressHandlerIml;
-        this.httpErrorHandlerIml = httpErrorHandlerIml;
+    public BaseDataObserver(ProgressHandler progressHandler, HttpErrorHandler httpErrorHandler) {
+        this.progressHandler = progressHandler;
+        this.httpErrorHandler = httpErrorHandler;
 
+    }
+    public BaseDataObserver(ProgressHandler progressHandler){
+        this.progressHandler=progressHandler;
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        if(progressHandlerIml!=null) {
-            progressHandlerIml.loadingStart();
+        if(progressHandler !=null) {
+            progressHandler.loadingStart();
         }
     }
     @Override
@@ -42,25 +47,25 @@ public abstract class BaseDataObserver<T extends BaseResponse> extends DefaultOb
 //        if (t != null && (t.isSuccess() || t.isDataEmpty()))
 
 
-        if(progressHandlerIml!=null) {
-            progressHandlerIml.loadingStart();
+        if(progressHandler !=null) {
+            progressHandler.loadingStart();
         }
             if (t != null) {
                 onDataNext(t);
             } else {
-                if(httpErrorHandlerIml!=null)
-                httpErrorHandlerIml.onHttpError(t);
+                if(httpErrorHandler !=null)
+                httpErrorHandler.onHttpError(t);
             }
     }
 
     @Override
     public void onError(Throwable t) {
-        if(progressHandlerIml!=null){
-            progressHandlerIml.loadingComplete();
+        if(progressHandler !=null){
+            progressHandler.loadingComplete();
         }
         t.printStackTrace();
         try {
-            httpErrorHandlerIml.onHttpException(t);
+            httpErrorHandler.onHttpException(t);
         }catch (NullPointerException e){
 
         }
@@ -69,8 +74,8 @@ public abstract class BaseDataObserver<T extends BaseResponse> extends DefaultOb
 
     @Override
     public void onComplete() {
-        if(progressHandlerIml!=null) {
-            progressHandlerIml.loadingComplete();
+        if(progressHandler !=null) {
+            progressHandler.loadingComplete();
         }
     }
     public abstract void onDataNext(T t);
