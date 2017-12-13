@@ -13,6 +13,6 @@ import retrofit2.http.Path;
 
 public interface IdeaApiService {
     // http://gank.io/api/data/数据类型/请求个数/第几页
-    @GET(value = "data/福利/" + 200 + "/{page}")
+    @GET(value = "data/福利/" + 50 + "/{page}")
     Observable<MeiZhi> getMeiziData(@Path("page") int page);
 }

@@ -1,7 +1,7 @@
 package com.example.administrator.myhttptest.amvp.home;
 
-import com.example.administrator.myhttptest.amvp.base.BasePresenter;
-import com.example.administrator.myhttptest.amvp.base.BaseView;
+import com.example.administrator.myhttptest.base.basemvp.BasePresenter;
+import com.example.administrator.myhttptest.base.basemvp.BaseView;
 import com.example.administrator.myhttptest.bean.MeiZhi;
 
 /**

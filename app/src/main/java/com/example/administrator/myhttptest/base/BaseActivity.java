@@ -25,6 +25,11 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         progressHandlerImp=new ProgressHandlerImp(this);
         initData();
         initView();
+        initListener();
+    }
+
+    public void initListener() {
+
     }
 
     public void initData() {
