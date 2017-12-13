@@ -5,16 +5,16 @@
             name="viewModel"
             type="com.example.administrator.myhttptest.viewmodel.MainItemVIewModel"/>
     </data>
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/item_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:src="@{viewModel.setImage}"
-            />
-    </LinearLayout>
+
+            <ImageView
+                android:id="@+id/item_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@{viewModel.setImage}"
+                />
+    </RelativeLayout>
 </layout>

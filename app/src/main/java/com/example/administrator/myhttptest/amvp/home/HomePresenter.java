@@ -1,7 +1,6 @@
 package com.example.administrator.myhttptest.amvp.home;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.example.administrator.myhttptest.bean.MeiZhi;
 import com.example.administrator.myhttptest.handler.progresshandler.ProgressHandler;
@@ -29,8 +28,8 @@ public class HomePresenter implements HomeContract.Presenter {
     @Override
     public void getData(int page) {
       model.getListData(page)
+              .subscribeOn(Schedulers.io())
               .observeOn(AndroidSchedulers.mainThread())
-              .subscribeOn(Schedulers.newThread())
               .subscribe(new BaseDataObserver<MeiZhi>(new ProgressHandler() {
                   @Override
                   public void loadingStart() {
@@ -40,12 +39,12 @@ public class HomePresenter implements HomeContract.Presenter {
                   @Override
                   public void loadingComplete() {
                       view.dismissProgressDialog();
+                      view.refreshEnd();
                   }
               }) {
                   @Override
                   public void onDataNext(MeiZhi meiZhi) {
                       view.setListData(meiZhi);
-                      Log.e("onDataNext", "======" + "走到了这一步");
                   }
               });
     }

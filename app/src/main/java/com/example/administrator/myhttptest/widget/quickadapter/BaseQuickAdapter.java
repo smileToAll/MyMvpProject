@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.administrator.myhttptest.quickadapter;
+package com.example.administrator.myhttptest.widget.quickadapter;
 
 import android.animation.Animator;
 import android.content.Context;
@@ -24,6 +24,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.LayoutParams;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,12 +34,12 @@ import android.widget.LinearLayout;
 
 import com.example.administrator.myhttptest.R;
 import com.example.administrator.myhttptest.databinding.LayoutNoLoadMoreBinding;
-import com.example.administrator.myhttptest.quickadapter.animation.AlphaInAnimation;
-import com.example.administrator.myhttptest.quickadapter.animation.BaseAnimation;
-import com.example.administrator.myhttptest.quickadapter.animation.ScaleInAnimation;
-import com.example.administrator.myhttptest.quickadapter.animation.SlideInBottomAnimation;
-import com.example.administrator.myhttptest.quickadapter.animation.SlideInLeftAnimation;
-import com.example.administrator.myhttptest.quickadapter.animation.SlideInRightAnimation;
+import com.example.administrator.myhttptest.widget.quickadapter.animation.AlphaInAnimation;
+import com.example.administrator.myhttptest.widget.quickadapter.animation.BaseAnimation;
+import com.example.administrator.myhttptest.widget.quickadapter.animation.ScaleInAnimation;
+import com.example.administrator.myhttptest.widget.quickadapter.animation.SlideInBottomAnimation;
+import com.example.administrator.myhttptest.widget.quickadapter.animation.SlideInLeftAnimation;
+import com.example.administrator.myhttptest.widget.quickadapter.animation.SlideInRightAnimation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -95,6 +96,7 @@ public abstract class BaseQuickAdapter<T> extends RecyclerView.Adapter<RecyclerV
 
 
     private LayoutNoLoadMoreBinding layoutNoLoadMoreBinding;
+    private View noloadMore;
 
     @IntDef({ALPHAIN, SCALEIN, SLIDEIN_BOTTOM, SLIDEIN_LEFT, SLIDEIN_RIGHT})
     @Retention(RetentionPolicy.SOURCE)
@@ -1171,10 +1173,17 @@ public abstract class BaseQuickAdapter<T> extends RecyclerView.Adapter<RecyclerV
 
 
     public View getNoLoadMoreView(){
-        if(layoutNoLoadMoreBinding==null){
-            layoutNoLoadMoreBinding = DataBindingUtil.inflate(LayoutInflater.from(mContext),R.layout.layout_no_load_more,null,false);
+//        if(layoutNoLoadMoreBinding==null){
+//            layoutNoLoadMoreBinding = DataBindingUtil.inflate(LayoutInflater.from(mContext),R.layout.layout_no_load_more,null,false);
+//        }
+       // return layoutNoLoadMoreBinding.getRoot();
+        Log.e("getNoLoadMoreView", "===2===" + mContext);
+        if(noloadMore==null){
+            noloadMore = LayoutInflater.from(mContext).inflate(R.layout.layout_no_load_more, null, false);
         }
-        return layoutNoLoadMoreBinding.getRoot();
+
+        return noloadMore;
+
     }
 
     private void setNoLoadMoreView(boolean enable) {

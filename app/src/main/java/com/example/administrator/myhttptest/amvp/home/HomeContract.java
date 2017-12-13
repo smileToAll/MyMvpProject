@@ -11,6 +11,8 @@ import com.example.administrator.myhttptest.bean.MeiZhi;
 public interface HomeContract {
     interface View extends BaseView {
         void setListData(MeiZhi meiZhi);
+        void refreshEnd();
+        void loadEnd();
     }
     interface Presenter extends BasePresenter {
         void getData(int page);

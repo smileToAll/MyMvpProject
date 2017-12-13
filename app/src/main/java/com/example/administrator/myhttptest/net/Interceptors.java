@@ -2,7 +2,6 @@ package com.example.administrator.myhttptest.net;
 
 
 import android.text.TextUtils;
-import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -61,7 +60,7 @@ public class Interceptors {
                     return;
                 //如果收到想响应是json才打印
                 if (message.startsWith("{") || message.startsWith("[")) {
-                    Log.e("收到响应:",message);
+                   // Log.e("收到响应:",message);
                 }
             }
         });

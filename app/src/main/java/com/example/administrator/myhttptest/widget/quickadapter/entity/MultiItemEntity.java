@@ -1,4 +1,4 @@
-package com.example.administrator.myhttptest.quickadapter.entity;
+package com.example.administrator.myhttptest.widget.quickadapter.entity;
 
 import java.io.Serializable;
 

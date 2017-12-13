@@ -1,4 +1,4 @@
-package com.example.administrator.myhttptest.quickadapter.listener;
+package com.example.administrator.myhttptest.widget.quickadapter.listener;
 
 import android.graphics.Canvas;
 import android.support.v7.widget.RecyclerView;

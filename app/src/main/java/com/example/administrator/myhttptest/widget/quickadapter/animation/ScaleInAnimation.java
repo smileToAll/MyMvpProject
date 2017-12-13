@@ -1,4 +1,4 @@
-package com.example.administrator.myhttptest.quickadapter.animation;
+package com.example.administrator.myhttptest.widget.quickadapter.animation;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
