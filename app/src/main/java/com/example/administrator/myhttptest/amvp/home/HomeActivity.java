@@ -12,6 +12,7 @@ import com.example.administrator.myhttptest.base.BaseActivity;
 import com.example.administrator.myhttptest.bean.MeiZhi;
 import com.example.administrator.myhttptest.bean.MeiZhiItemData;
 import com.example.administrator.myhttptest.databinding.ActivityMainBinding;
+import com.example.administrator.myhttptest.utils.IntentUtils;
 import com.example.administrator.myhttptest.viewmodel.MainItemVIewModel;
 import com.example.administrator.myhttptest.widget.quickadapter.BaseQuickAdapter;
 import com.example.administrator.myhttptest.widget.quickadapter.BaseViewHolder;
@@ -60,9 +61,8 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
         adapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent=new Intent(HomeActivity.this,ImageDetailActivity.class);
-                intent.putExtra("data",adapter.getData().get(position));
-                startActivity(intent);
+                IntentUtils.goActivity(new Intent(HomeActivity.this,ImageDetailActivity.class).
+                        putExtra("data",adapter.getData().get(position)));
             }
         });
         adapter.openLoadAnimation(new ScaleInAnimation());

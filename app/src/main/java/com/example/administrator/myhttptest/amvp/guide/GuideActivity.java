@@ -53,7 +53,7 @@ public class GuideActivity extends BaseActivity implements GuideContract.View {
         super.onClick(v);
         switch (v.getId()){
             case R.id.btn_go:
-                IntentUtils.goActivity(GuideActivity.this,HomeActivity.class);
+                IntentUtils.goActivity(new Intent(GuideActivity.this,HomeActivity.class));
                 finish();
                 break;
         }

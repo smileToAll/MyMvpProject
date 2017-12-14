@@ -7,6 +7,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 
+import com.example.administrator.myhttptest.base.MyApp;
+
 /**
  * <pre>
  *     author: Blankj
@@ -212,8 +214,10 @@ public class IntentUtils {
         intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
         back intent;
     }*/
-    public static void goActivity(Context context, Class clazz){
-        Intent intent =new Intent(context,clazz);
-        context.startActivity(intent);
+    /**
+     * Intent跳转到其他Activity
+     */
+    public static void goActivity(Intent intent){
+       MyApp.getInstance().getApplicationContext().startActivity(intent);
     }
 }
