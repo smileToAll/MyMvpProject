@@ -61,7 +61,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.View {
             @Override
             public void onItemClick(View view, int position) {
                 Intent intent=new Intent(HomeActivity.this,ImageDetailActivity.class);
-                intent.putExtra("data",(MeiZhiItemData)adapter.getData().get(position));
+                intent.putExtra("data",adapter.getData().get(position));
                 startActivity(intent);
             }
         });

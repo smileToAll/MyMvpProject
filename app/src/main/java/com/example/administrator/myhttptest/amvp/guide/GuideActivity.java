@@ -17,6 +17,7 @@ import com.example.administrator.myhttptest.base.BaseActivity;
 import com.example.administrator.myhttptest.bean.MeiZhi;
 import com.example.administrator.myhttptest.bean.MeiZhiItemData;
 import com.example.administrator.myhttptest.databinding.ActivityGuideBinding;
+import com.example.administrator.myhttptest.utils.IntentUtils;
 import com.shizhefei.view.indicator.IndicatorViewPager;
 
 import java.util.ArrayList;
@@ -44,14 +45,18 @@ public class GuideActivity extends BaseActivity implements GuideContract.View {
     @Override
     public void initListener() {
         super.initListener();
-        binding.btnGo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(GuideActivity.this, HomeActivity.class);
-                startActivity(intent);
+        binding.btnGo.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        super.onClick(v);
+        switch (v.getId()){
+            case R.id.btn_go:
+                IntentUtils.goActivity(GuideActivity.this,HomeActivity.class);
                 finish();
-            }
-        });
+                break;
+        }
     }
 
     @Override
@@ -121,7 +126,7 @@ public class GuideActivity extends BaseActivity implements GuideContract.View {
     }
 
     @Override
-    public void getGuideData(MeiZhi meiZhi) {
+    public void setGuideData(MeiZhi meiZhi) {
         for (int i = 0; i < 5; i++) {
             list.add(meiZhi.getResults().get(i));
         }

@@ -10,7 +10,7 @@ import com.example.administrator.myhttptest.bean.MeiZhi;
 
 public interface GuideContract {
     interface View extends BaseView{
-        void getGuideData(MeiZhi meiZhi);
+        void setGuideData(MeiZhi meiZhi);
     }
     interface Presenter extends BasePresenter{
         void getGuideImages(int page);

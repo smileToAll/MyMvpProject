@@ -3,6 +3,7 @@ package com.example.administrator.myhttptest.base;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
 
 import com.example.administrator.myhttptest.handler.progresshandler.ProgressHandlerImp;
 import com.example.administrator.myhttptest.widget.ptrcustomheader.PtrMyTextHeader;
@@ -15,7 +16,7 @@ import in.srain.cube.views.ptr.PtrHandler;
  * Created by lijie on 2017/8/14.
  */
 
-public abstract class BaseActivity extends RxAppCompatActivity {
+public abstract class BaseActivity extends RxAppCompatActivity implements View.OnClickListener{
 
     protected ProgressHandlerImp progressHandlerImp;
     @Override
@@ -55,5 +56,10 @@ public abstract class BaseActivity extends RxAppCompatActivity {
         frameLayout.disableWhenHorizontalMove(true);
         frameLayout.setPtrHandler(handler);
         frameLayout.setRatioOfHeaderHeightToRefresh(0.2f);
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

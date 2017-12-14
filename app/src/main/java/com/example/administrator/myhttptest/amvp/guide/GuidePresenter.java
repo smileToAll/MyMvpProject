@@ -38,7 +38,7 @@ public class GuidePresenter implements GuideContract.Presenter {
                 }) {
                     @Override
                     public void onDataNext(MeiZhi meiZhi) {
-                        view.getGuideData(meiZhi);
+                        view.setGuideData(meiZhi);
                     }
                 });
 
