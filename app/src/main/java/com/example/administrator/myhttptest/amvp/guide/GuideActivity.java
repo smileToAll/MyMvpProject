@@ -63,7 +63,7 @@ public class GuideActivity extends BaseActivity implements GuideContract.View {
     public void initData() {
         super.initData();
         presenter=new GuidePresenter(this);
-        presenter.getGuideImages(1);
+        presenter.getGuideImages(8);
     }
 
     @Override
@@ -127,7 +127,7 @@ public class GuideActivity extends BaseActivity implements GuideContract.View {
 
     @Override
     public void setGuideData(MeiZhi meiZhi) {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 12; i < 15; i++) {
             list.add(meiZhi.getResults().get(i));
         }
         if(list.size()==0){
