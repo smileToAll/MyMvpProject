@@ -1,4 +1,5 @@
 # MyMvpProject
 综合mvp+retrofit+rxjava2的一个小项目。
-借鉴很多前辈的博客与demo，按照自己的理解写的一个基于MVP+retrofit+rxjava2的demo，功能很简单，主要是对MVP的理解与练习。
+学习谷歌官方MVP项目以及借鉴很多前辈的博客demo之后按照自己的理解写的一个基于MVP+retrofit+rxjava2的demo，借鉴大神项目中的数据，项目内功能很简单，主要是在此练习一下MVP的用法。
+项目中使用了dataBinding,网络框架使用Retrofit+Rxjava2,当然最主要的是项目框架为MVP。
 
