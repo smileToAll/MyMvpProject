@@ -3,8 +3,8 @@ package com.example.administrator.myhttptest.handler.httperrorhandler;
 import android.content.Context;
 
 import com.example.administrator.myhttptest.bean.BaseResponse;
-import com.example.administrator.myhttptest.utils.NetworkUtils;
-import com.example.administrator.myhttptest.utils.ToastUtils;
+import com.example.administrator.myhttptest.widget.utils.NetworkUtils;
+import com.example.administrator.myhttptest.widget.utils.ToastUtils;
 import com.jakewharton.retrofit2.adapter.rxjava2.HttpException;
 
 import java.io.IOException;

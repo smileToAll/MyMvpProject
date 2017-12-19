@@ -1,0 +1,19 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             tools:context="com.example.administrator.myhttptest.amvp.fragment.main.meizhi.MeizhiFragment">
+
+        <in.srain.cube.views.ptr.PtrClassicFrameLayout
+            android:id="@+id/ptr_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+    </LinearLayout>
+</layout>

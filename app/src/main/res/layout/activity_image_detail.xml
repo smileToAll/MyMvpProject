@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#515151"
-        tools:context="com.example.administrator.myhttptest.amvp.detail.ImageDetailActivity">
+        tools:context=".amvp.activity.detail.ImageDetailActivity">
         <ImageView
             android:id="@+id/detail_image"
             android:layout_width="match_parent"

@@ -2,7 +2,7 @@ package com.example.administrator.myhttptest.handler.progresshandler;
 
 import android.content.Context;
 
-import com.example.administrator.myhttptest.widget.MyProgressDialog;
+import com.example.administrator.myhttptest.widget.dialog.MyProgressDialog;
 
 
 /**

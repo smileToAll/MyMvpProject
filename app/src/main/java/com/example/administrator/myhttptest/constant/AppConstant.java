@@ -6,4 +6,5 @@ package com.example.administrator.myhttptest.constant;
 
 public class AppConstant {
     public static int DEFAULT_TIMEOUT=20000;
+    public static String CURRENT_MENU="current_menu";
 }

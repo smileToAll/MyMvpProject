@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android.support.design="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/meizhi"
+        android:icon="@mipmap/icon1"
+        android:checkable="true"
+        android:checked="true"
+        android:title="单列妹子"/>
+    <item
+        android:id="@+id/news"
+        android:icon="@mipmap/icon2"
+        android:checkable="true"
+        android:title="瀑布流"/>
+</menu>

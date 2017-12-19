@@ -1,20 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.administrator.myhttptest.amvp.home.HomeActivity">
-        <in.srain.cube.views.ptr.PtrClassicFrameLayout
-            android:id="@+id/ptr_frame"
+        android:orientation="vertical"
+        tools:context=".amvp.activity.main.MainActivity">
+
+        <LinearLayout
             android:layout_width="match_parent"
+            android:orientation="vertical"
             android:layout_height="match_parent">
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycler"
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:background="#666666"
+               android:layout_height="40dp">
+               <FrameLayout
+                   android:layout_width="wrap_content"
+                   android:layout_centerVertical="true"
+                   android:paddingLeft="14dp"
+                   android:paddingRight="14dp"
+                   android:layout_height="match_parent">
+                   <TextView
+                       android:id="@+id/toggle"
+                       android:layout_width="15dp"
+                       android:layout_gravity="center"
+                       android:background="@drawable/main_circle"
+                       android:layout_height="15dp"/>
+               </FrameLayout>
+
+               <TextView
+                   android:id="@+id/title"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_centerInParent="true"
+                   android:textSize="14.8sp"
+                   android:textStyle="bold"
+                   android:textColor="#FFFFFF"
+                   android:text="标题"/>
+           </RelativeLayout>
+            <FrameLayout
+                android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
-        </in.srain.cube.views.ptr.PtrClassicFrameLayout>
-
-    </LinearLayout>
+        </LinearLayout>
+        <android.support.design.widget.NavigationView
+            android:id="@+id/main_nav"
+            android:layout_width="280dp"
+            android:layout_gravity="left"
+            app:headerLayout="@layout/header_layout"
+            app:menu="@menu/main_menu"
+            android:layout_height="match_parent"/>
+    </android.support.v4.widget.DrawerLayout>
 </layout>
