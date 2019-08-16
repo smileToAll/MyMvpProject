@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:layout_weight="0.85"
         >
-        <com.example.administrator.myhttptest.widget.ptrcustomheader.ArrowView
+        <com.example.administrator.myhttptest.common.widget.ptrcustomheader.ArrowView
             android:id="@+id/arrow_view"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"

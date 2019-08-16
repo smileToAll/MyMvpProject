@@ -1,0 +1,21 @@
+
+Msquid:S1133¶"5Do not forget to remove this deprecated code someday.(¯³¸ù
+Usquid:MissingDeprecatedChecks"(Add the missing @deprecated Javadoc tag.(²Š§×ÿÿÿÿÿ
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(µ‹Èûÿÿÿÿ
+™squid:S1186‹"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(µ¹©Õ
+™squid:S1186—"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚©®“
+Qsquid:MissingDeprecatedCheck¿"(Add the missing @deprecated Javadoc tag.(‡˜®¨
+squid:S1186›"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(†—÷ÿüÿÿÿÿ
+Qsquid:MissingDeprecatedCheck¶"(Add the missing @deprecated Javadoc tag.(¯³¸ù
+Msquid:S1133¿"5Do not forget to remove this deprecated code someday.(‡˜®¨
+Msquid:S1133È"5Do not forget to remove this deprecated code someday.(Ô½çÎ
+Lsquid:S1133}"5Do not forget to remove this deprecated code someday.(üÂŒÓ
+™squid:S1186Ñ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¡é††
+Qsquid:S1133s"5Do not forget to remove this deprecated code someday.(²Š§×ÿÿÿÿÿ
+squid:S1186Ö"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(š¦ÚÉÿÿÿÿÿ
+Qsquid:MissingDeprecatedCheckÈ"(Add the missing @deprecated Javadoc tag.(Ô½çÎ
+Usquid:MissingDeprecatedCheck&"(Add the missing @deprecated Javadoc tag.(²Ò¤ƒùÿÿÿÿ
+Psquid:MissingDeprecatedCheck}"(Add the missing @deprecated Javadoc tag.(üÂŒÓ
+™squid:S1186“"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(·øæñ
+Qsquid:S1133&"5Do not forget to remove this deprecated code someday.(²Ò¤ƒùÿÿÿÿ
+˜squid:S1186‡"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(õÅÚ#

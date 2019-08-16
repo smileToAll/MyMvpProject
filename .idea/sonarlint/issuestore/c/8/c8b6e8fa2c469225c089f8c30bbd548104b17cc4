@@ -1,0 +1,7 @@
+
+;squid:S1872b"Use "isAssignableFrom" instead.(¾“¨ûýÿÿÿÿ
+Ksquid:S1066b"/Merge this if statement with the enclosing one.(¾“¨ûýÿÿÿÿ
+gsquid:S1301Y"KReplace this "switch" statement by "if" statements to increase readability.(×“¾ñùÿÿÿÿ
+U"squid:SwitchLastCaseIsDefaultCheckm""Add a default case to this switch.(Ò“ÿšùÿÿÿÿ
+gsquid:S1301m"KReplace this "switch" statement by "if" statements to increase readability.(Ò“ÿšùÿÿÿÿ
+U"squid:SwitchLastCaseIsDefaultCheckY""Add a default case to this switch.(×“¾ñùÿÿÿÿ
