@@ -30,7 +30,7 @@ public class MainActivity extends BaseActivity {
     Fragment currentFragment;
     MenuItem currentMenuItem;
     Bundle savedInstanceState;
-    long times;
+    private long times;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
