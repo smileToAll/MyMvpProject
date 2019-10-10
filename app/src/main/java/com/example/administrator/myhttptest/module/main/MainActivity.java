@@ -29,7 +29,7 @@ public class MainActivity extends BaseActivity {
     ActivityMainBinding binding;
     Fragment currentFragment;
     MenuItem currentMenuItem;
-    Bundle savedInstanceState;
+    private Bundle savedInstanceState;
     private long times;
 
     @Override
