@@ -28,7 +28,7 @@ import io.reactivex.functions.Consumer;
 public class MainActivity extends BaseActivity {
     ActivityMainBinding binding;
     Fragment currentFragment;
-    MenuItem currentMenuItem;
+    private MenuItem currentMenuItem;
     private Bundle savedInstanceState;
     private long times;
 
